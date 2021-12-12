@@ -1,38 +1,43 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
+import Post from "../components/MainPost/Post";
 
 export default function HomeScreen({
   navigation,
 }: RootTabScreenProps<"MainPost">) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-      <EditScreenInfo path="/screens/MainPostScreen.tsx" />
+    <View>
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          paddingBottom: 20,
+        }}
+      >
+        <Post />
+        <Post />
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
+    width: "90%",
     justifyContent: "center",
+    backgroundColor: "white",
+    alignContent: "center",
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
   },
   separator: {
-    marginVertical: 30,
     height: 1,
     width: "80%",
   },
