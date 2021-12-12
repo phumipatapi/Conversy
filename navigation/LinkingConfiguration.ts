@@ -15,9 +15,9 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          Home: {
+          MainPost: {
             screens: {
-              HomeScreen: "one",
+              MainPostScreen: "one",
             },
           },
           MainChat: {

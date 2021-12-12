@@ -19,7 +19,7 @@ import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
-import HomeScreen from "../screens/HomeScreen";
+import MainPostScreen from "../screens/MainPostScreen";
 import MainChatScreen from "../screens/MainChatScreen";
 import MainProfileScreen from "../screens/MainProfileScreen";
 import MainSettingScreen from "../screens/MainSettingScreen";
@@ -82,16 +82,16 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName="MainPost"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}
     >
       <BottomTab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={({ navigation }: RootTabScreenProps<"Home">) => ({
-          title: "Home",
+        name="MainPost"
+        component={MainPostScreen}
+        options={({ navigation }: RootTabScreenProps<"MainPost">) => ({
+          title: "Post",
           tabBarIcon: ({ color }) => (
             <Icon name="home" size={24} color={color} />
           ),
